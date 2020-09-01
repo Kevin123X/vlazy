@@ -16,12 +16,8 @@ export default {
     };
   },
   created() {
-    this.$http.get('/data.json').then((res) => {
-        const imgs=res.data.items
-        this.imgList=[...imgs]
-      }).catch((err) => {
-        console.log(err);
-      });
+    const {items}=require('./data.json')
+        this.imgList=[...items]
   },
   methods: {
     handleScroll(e) {
